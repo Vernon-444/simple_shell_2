@@ -1,5 +1,17 @@
 #include "shell.h"
 
+/*
+* compile: gcc *.c -g -o hsh
+* valgrind ./hsh
+*
+* valgrind cheat sheet
+* https://bytes.usc.edu/cs104/wiki/valgrind/
+*
+* shell flow chart
+* https://www.goconqr.com/diagrama/20309125/simple-shell
+*/
+
+
 void sig_handler(int sig);
 int execute(char **args, char **front);
 

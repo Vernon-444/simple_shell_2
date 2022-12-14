@@ -18,8 +18,8 @@ char **_copyenv(void)
 
 	for (size = 0; environ[size]; size++)
 		;
-
-	new_environ = malloc(sizeof(char *) * (size + 1));
+	/* added -1 at end for mem issue */
+	new_environ = malloc(sizeof(char *) * (size + 1) - 1);
 	if (!new_environ)
 		return (NULL);
 
@@ -30,7 +30,7 @@ char **_copyenv(void)
 		if (!new_environ[index])
 		{
 			for (index--; index >= 0; index--)
-				free(new_environ[index]);
+					free(new_environ[index]);
 			free(new_environ);
 			return (NULL);
 		}

@@ -25,7 +25,8 @@ char *get_location(char *command)
 
 	while (dirs)
 	{
-		temp = malloc(_strlen(dirs->dir) + _strlen(command) + 2);
+		/* alloc wrong amout of memory, should be + 2 at end, not 1*/
+		temp = malloc(_strlen(dirs->dir) + _strlen(command) + 1);
 		if (!temp)
 			return (NULL);
 
@@ -42,8 +43,8 @@ char *get_location(char *command)
 		dirs = dirs->next;
 		free(temp);
 	}
-
-	free_list(head);
+	/* Didn't free the head of list */
+	/* free_list(head); */
 
 	return (NULL);
 }
