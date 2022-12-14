@@ -12,6 +12,10 @@
 */
 
 
+// locate.c:29
+// environ.c:22
+
+
 void sig_handler(int sig);
 int execute(char **args, char **front);
 
